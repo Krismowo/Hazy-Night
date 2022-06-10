@@ -2,6 +2,8 @@ package;
 
 import flixel.FlxState;
 import flixel.FlxSprite;
+import flixel.FlxG;
+import flixel.util.FlxTimer;
 
 class PlayState extends FlxState
 {
@@ -13,6 +15,20 @@ class PlayState extends FlxState
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
+	}
+	
+	public function creature1(?tim:FlxTimer){
+		new FlxTimer().start(FlxG.random.Float(1, 2), creature1);
+	}
+	
+	public function creature2(?tim:FlxTimer){
+		new FlxTimer().start(FlxG.random.Float(1, 2), creature2);
+		
+	}
+	
+	public function creature3(?tim:FlxTimer){
+		new FlxTimer().start(FlxG.random.Float(1, 2), creature3);
+		
 	}
 	
 	public function dominantColor(sprite:flixel.FlxSprite):Int{
